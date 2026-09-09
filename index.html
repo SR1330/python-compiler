@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Runbook — Python, in the browser</title>
+<title>Runbook — Free Online Python Compiler & Editor (Runs in Your Browser)</title>
+<meta name="description" content="Write and run Python code instantly in your browser — no installation, no signup, no server. Free online Python compiler powered by Pyodide (WebAssembly).">
+<meta name="keywords" content="online python compiler, python editor online, run python in browser, python interpreter online, free python compiler, pyodide">
+<link rel="canonical" href="https://sr1330.github.io/python-compiler/">
+
+<meta property="og:title" content="Runbook — Free Online Python Compiler">
+<meta property="og:description" content="Write and run Python code instantly in your browser. No installation, no signup, no server.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sr1330.github.io/python-compiler/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Runbook — Free Online Python Compiler">
+<meta name="twitter:description" content="Write and run Python code instantly in your browser. No installation, no signup, no server.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
@@ -89,6 +102,16 @@
     padding: 9px 14px;
     cursor: pointer;
     transition: border-color .15s ease, background .15s ease, transform .05s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+    min-height: 40px;
+  }
+  select{
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A99E8F' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 32px;
   }
   select:hover, button:hover{ border-color: var(--text-dim); }
   button:active{ transform: translateY(1px); }
@@ -128,6 +151,8 @@
   }
   @media (max-width: 860px){
     main{ grid-template-columns: 1fr; }
+    .pane{ min-height: 320px; }
+    #code, #gutter{ font-size: 15px; }
   }
 
   .pane{
@@ -298,6 +323,31 @@ for i in range(5):
     <div id="output"><div class="empty">Output will show up here once you run something.</div></div>
   </section>
 </main>
+
+<section style="max-width: 720px; margin: 0 auto; padding: 40px 24px; color: var(--text-dim); font-size: 14px; line-height: 1.7;">
+  <h2 style="font-family:'Space Grotesk',sans-serif; color: var(--text); font-size: 20px; margin-bottom: 12px;">About this online Python compiler</h2>
+  <p>
+    Runbook is a free online Python compiler that runs entirely in your web browser.
+    Unlike most "online Python compiler" tools that send your code to a remote server,
+    Runbook uses <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a> —
+    a version of Python compiled to WebAssembly — so your code executes locally on your
+    own device. There's nothing to install and nothing to sign up for.
+  </p>
+  <h3 style="font-family:'Space Grotesk',sans-serif; color: var(--text); font-size: 16px; margin-top: 24px;">How to use it</h3>
+  <p>
+    Type or paste Python code into the editor on the left, then click Run (or press
+    Ctrl+Enter). Output, including errors, appears on the right in real time. Try one of
+    the built-in examples — Fibonacci sequence, FizzBuzz, or a prime sieve — from the
+    dropdown menu to see it in action.
+  </p>
+  <h3 style="font-family:'Space Grotesk',sans-serif; color: var(--text); font-size: 16px; margin-top: 24px;">Why run Python in the browser?</h3>
+  <p>
+    Running Python client-side means faster feedback with no server queue, no data
+    leaving your device, and no environment to configure. It's well suited for quick
+    scripts, learning Python syntax, testing small snippets, and teaching, without the
+    overhead of a full local Python installation.
+  </p>
+</section>
 
 <footer>
   <span>Runs entirely client-side via <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a> — nothing is sent to a server. · <a class="footlink" href="privacy.html">Privacy Policy</a></span>
