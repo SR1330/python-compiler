@@ -132,7 +132,7 @@
   main{
     flex:1;
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1px;
     background: var(--line);
     min-height: 0;
@@ -148,6 +148,7 @@
     display:flex;
     flex-direction:column;
     min-height: 420px;
+    min-width: 0;
   }
   .pane-head{
     padding: 10px 16px;
@@ -170,6 +171,7 @@
 
   .editor-wrap{
     flex:1;
+    min-width: 0;
     display:flex;
     overflow: hidden;
     position: relative;
@@ -190,6 +192,7 @@
   }
   #code{
     flex:1;
+    min-width: 0;
     font-family:'IBM Plex Mono', monospace;
     font-size: 14px;
     line-height: 22px;
